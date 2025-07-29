@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>E-TICKET - RDC Congo</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo-section">
+                <div class="logo">
+                    <div class="logo-image">
+                        <img src="images/new-logo.png" alt="RDC Congo Logo" class="logo-img">
+                    </div>
+                    <div class="logo-text">
+                        <h1>E-TICKET</h1>
+                        <p>RDC CONGO</p>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-buttons">
+                <button class="btn-exigences" onclick="openExigencesModal()">EXIGENCES</button>
+                <div class="language-selector">
+                    <select id="languageSelect" onchange="changeLanguage(this.value)">
+                        <option value="fr">FRANÇAIS</option>
+                        <option value="en">ENGLISH</option>
+                        <option value="es">ESPAÑOL</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="airport-decoration">
+            <div class="plane-icon plane-1">
+                <i class="fas fa-plane"></i>
+            </div>
+            <div class="plane-icon plane-2">
+                <i class="fas fa-plane"></i>
+            </div>
+            <div class="plane-icon plane-3">
+                <i class="fas fa-plane"></i>
+            </div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-left">
+                <div class="phone-illustration">
+                    <div class="phone-screen">
+                        <div class="phone-header">
+                            <i class="fas fa-plane"></i>
+                            <span>Checklist</span>
+                        </div>
+                        <div class="checklist">
+                            <div class="checklist-item checked">
+                                <i class="fas fa-check"></i>
+                                <span>Documents</span>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="far fa-circle"></i>
+                                <span>Visa</span>
+                            </div>
+                            <div class="checklist-item">
+                                <i class="far fa-circle"></i>
+                                <span>E-Ticket</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="travelers">
+                        <div class="traveler adult"></div>
+                        <div class="traveler adult"></div>
+                        <div class="traveler child"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-right">
+                <h2>Bienvenue sur la page d'accueil E-TICKET, le site d'immigration pour entrer et sortir sur le territoire de la RDC Congo</h2>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="openForm()">
+                        <i class="fas fa-file-alt"></i>
+                        FORMULAIRE D'E-TICKET
+                    </button>
+                    <button class="btn btn-secondary" onclick="consultTicket()">
+                        <i class="fas fa-search"></i>
+                        CONSULTER LE E-TICKET
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What is E-TICKET Section -->
+    <section class="what-is-eticket">
+        <div class="container">
+            <h2>Qu'est-ce que le E-TICKET?</h2>
+            <div class="content">
+                <p>Le E-TICKET est un document électronique obligatoire pour tous les voyageurs entrant ou sortant du territoire de la RDC Congo. Il s'agit d'un système moderne et sécurisé qui remplace les anciens formulaires papier.</p>
+                <p>Ce document est requis par la Direction Générale de Migration (DGM) et la Direction Générale des Douanes (DGA) conformément à la loi 285-04 sur la migration et à la résolution 000-2023.</p>
+                <p>Cliquez ici pour accéder à la page du voyageur numérique:</p>
+                <button class="btn btn-orange" onclick="openExigencesInfoModal()">
+                    <i class="fas fa-hand-point-up"></i>
+                    Exigences
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instructions Section -->
+    <section class="instructions">
+        <div class="container">
+            <h2>Instructions pour faire votre demande</h2>
+            <div class="instructions-grid">
+                <div class="instruction-card">
+                    <div class="card-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Faire une demande</h3>
+                    <ol>
+                        <li>Cliquez sur le bouton <strong>Demande de billet électronique</strong></li>
+                        <li>Remplissez les informations demandées</li>
+                        <li>Cliquez sur la touche Entrée</li>
+                        <li>Si vous avez déjà une candidature, cliquez sur accès et saisissez votre numéro de candidature</li>
+                    </ol>
+                </div>
+                <div class="instruction-card">
+                    <div class="card-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Dans le formulaire</h3>
+                    <ol>
+                        <li>Notez bien votre référence de dossier. Ce numéro et votre question de sécurité vous permettront d'accéder à votre formulaire à tout moment</li>
+                        <li>Remplissez correctement les informations demandées</li>
+                        <li>Le formulaire de Déclaration en Douanes est obligatoire pour les personnes majeures (18+)</li>
+                    </ol>
+                </div>
+                <div class="instruction-card">
+                    <div class="card-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <h3>Formulaire complété</h3>
+                    <ol>
+                        <li>Un E-TICKET avec un code QR sera émis</li>
+                        <li>Cliquez sur la touche Téléchargez PDF si vous voulez sauvegarder une copie sur votre appareil</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-left">
+                <div class="logo-image">
+                    <img src="images/new-logo.png" alt="RDC Congo Logo" class="footer-logo-img">
+                </div>
+            </div>
+            <div class="footer-right">
+                <p>GOUVERNEMENT DE LA RDC CONGO</p>
+                <h3>MIGRATION</h3>
+                <i class="fas fa-dome"></i>
+            </div>
+        </div>
+        <div class="footer-bottom">
+                            <p>&copy; 2025 DIRECTION GÉNÉRALE DE MIGRATION</p>
+                            <p>Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <!-- Modal for E-TICKET Form -->
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Formulaire E-TICKET</h2>
+            <form id="eticketForm">
+                <div class="form-group">
+                    <label for="firstName">Prénom</label>
+                    <input type="text" id="firstName" name="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Nom</label>
+                    <input type="text" id="lastName" name="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="passport">Numéro de passeport</label>
+                    <input type="text" id="passport" name="passport" required>
+                </div>
+                <div class="form-group">
+                    <label for="nationality">Nationalité</label>
+                    <select id="nationality" name="nationality" required>
+                        <option value="">Sélectionnez votre nationalité</option>
+                        <option value="FR">France</option>
+                        <option value="US">États-Unis</option>
+                        <option value="CA">Canada</option>
+                        <option value="ES">Espagne</option>
+                        <option value="DE">Allemagne</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="travelDate">Date de voyage</label>
+                    <input type="date" id="travelDate" name="travelDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="purpose">Motif du voyage</label>
+                    <select id="purpose" name="purpose" required>
+                        <option value="">Sélectionnez le motif</option>
+                        <option value="tourism">Tourisme</option>
+                        <option value="business">Affaires</option>
+                        <option value="family">Visite familiale</option>
+                        <option value="transit">Transit</option>
+                    </select>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Soumettre</button>
+                    <button type="button" class="btn btn-secondary" onclick="closeModal()">Annuler</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- E-TICKET Request Type Modal -->
+    <div id="requestTypeModal" class="modal">
+        <div class="modal-content request-type-modal">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div class="request-type-header">
+                <div class="question-icon">
+                    <i class="fas fa-question-circle"></i>
+                </div>
+                <h2>Quel type de demande souhaitez-vous formuler?</h2>
+            </div>
+            <div class="request-type-buttons">
+                <button class="btn btn-primary request-type-btn" onclick="openNewTicket()">
+                    <i class="fas fa-plus-circle"></i>
+                    Nouveau billet électronique
+                </button>
+                <button class="btn btn-secondary request-type-btn" onclick="openPreviousTicket()">
+                    <i class="fas fa-copy"></i>
+                    Créer à partir d'un précédent eTicket
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success">
+            <span class="close">&times;</span>
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <h2>E-TICKET Généré avec Succès!</h2>
+                <div class="qr-code">
+                    <div class="qr-placeholder">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <p>Code QR: <span id="ticketNumber">ET-2025-001234</span></p>
+                </div>
+                <div class="ticket-actions">
+                    <button class="btn btn-primary" onclick="downloadPDF()">
+                        <i class="fas fa-download"></i>
+                        Télécharger PDF
+                    </button>
+                    <button class="btn btn-secondary" onclick="closeSuccessModal()">
+                        Fermer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- E-TICKET Form Page Modal -->
+    <div id="eticketFormPage" class="modal form-page-modal">
+        <div class="form-page-content">
+            <!-- Header -->
+            <div class="form-page-header">
+                <div class="form-page-logo">
+                    <img src="images/new-logo.png" alt="RDC Congo Logo" class="form-logo-img">
+                    <div class="form-logo-text">
+                        <h1>E-TICKET</h1>
+                        <p>RDC CONGO</p>
+                    </div>
+                </div>
+                <div class="form-page-language">
+                    <select id="formLanguageSelect" onchange="changeFormLanguage(this.value)">
+                        <option value="fr">FRANÇAIS</option>
+                        <option value="en">ENGLISH</option>
+                        <option value="es">ESPAÑOL</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+                <span class="close" onclick="closeFormPage()">&times;</span>
+            </div>
+
+            <!-- Main Content -->
+            <div class="form-page-body">
+                <!-- Left Section - Illustration and Notice -->
+                <div class="form-page-left">
+                    <div class="illustration-section">
+                        <div class="woman-photo">
+                            <img src="images/woman-smartphone-laptop.jpg" alt="Woman with smartphone and laptop" class="woman-image">
+                        </div>
+                    </div>
+                    
+                    <div class="notice-section">
+                        <div class="notice-box">
+                            <div class="notice-icon">
+                                <i class="fas fa-info-circle"></i>
+                            </div>
+                            <div class="notice-content">
+                                <h3>Remarquer</h3>
+                                <p>Assurez-vous de saisir le numéro de passeport et la nationalité tels qu'ils apparaissent sur votre passeport avec lequel vous allez voyager</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Section - Form -->
+                <div class="form-page-right">
+                    <div class="form-container">
+                        <div class="form-header">
+                            <h2><i class="fas fa-question-circle"></i> Formulaire d'E-TICKET</h2>
+                        </div>
+                        
+                        <div class="form-notice">
+                            <p>Les champs marqués d'un astérisque rouge sont obligatoires (*)</p>
+                        </div>
+
+                        <form id="eticketFormPageForm">
+                            <div class="form-group">
+                                <label for="travelCompanion">Voyagez vous accompagné d'une autre personne?</label>
+                                <div class="toggle-switch">
+                                    <input type="checkbox" id="travelCompanion" name="travelCompanion">
+                                    <label for="travelCompanion" class="toggle-label">
+                                        <span class="toggle-text">NON</span>
+                                    </label>
+                                </div>
+                                <div class="companion-passport-group" style="display:none; margin-top:10px;">
+                                    <label for="companionPassport" style="font-weight:400; font-size:0.95em;">Numéro de passeport de l'accompagnant</label>
+                                    <input type="text" id="companionPassport" class="companion-passport" name="companionPassport" placeholder="Entrez le numéro de passeport">
+                                </div>
+                            </div>
+
+                            <div class="recaptcha-section">
+                                <div class="recaptcha-checkbox">
+                                    <input type="checkbox" id="recaptcha" name="recaptcha" required>
+                                </div>
+                                <div class="recaptcha-logo">
+                                    <img src="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><path fill='%23000' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z'/></svg>" alt="reCAPTCHA">
+                                    <span>reCAPTCHA</span>
+                                    <a href="#">Confidentialité</a>
+                                    <a href="#">Conditions</a>
+                                </div>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn btn-primary" onclick="openApplicationForm(); return false;">Valider</button>
+                                <button type="button" class="btn btn-secondary" onclick="closeFormPage()">Annuler</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="form-page-footer">
+                <div class="footer-left">
+                    <div class="logo-image">
+                        <img src="images/new-logo.png" alt="RDC Congo Logo" class="footer-logo-img">
+                    </div>
+                </div>
+                <div class="footer-right">
+                    <p>GOUVERNEMENT DE LA RDC CONGO</p>
+                    <h3>MIGRATION</h3>
+                    <i class="fas fa-dome"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- E-TICKET Application Form Modal -->
+    <div id="eticketApplicationForm" class="modal application-form-modal">
+        <div class="application-form-content">
+            <!-- Close Button -->
+            <span class="close" onclick="closeApplicationForm()">&times;</span>
+            
+            <!-- Back Arrow Button -->
+            <span class="back-arrow" onclick="closeApplicationForm()">
+                <i class="fas fa-chevron-left"></i>
+            </span>
+
+            <!-- Navigation Header -->
+            <div class="application-nav-header">
+                <div class="nav-logo">
+                    <img src="images/new-logo.png" alt="RDC Congo Logo" class="nav-logo-img">
+                    <div class="nav-logo-text">
+                        <h1>E-TICKET</h1>
+                        <p>RDC CONGO</p>
+                    </div>
+                </div>
+                <div class="nav-language">
+                    <select id="appLanguageSelect" onchange="changeAppLanguage(this.value)">
+                        <option value="fr">FRANÇAIS</option>
+                        <option value="en">ENGLISH</option>
+                        <option value="es">ESPAÑOL</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            
+            <!-- Top Section -->
+            <div class="application-top">
+            </div>
+
+            <!-- Main Form Content -->
+            <div class="application-form-body">
+                <div class="form-section">
+                    <h2>INFORMATION GENERALE</h2>
+                    <div class="mandatory-notice">
+                        Les champs marqués d'un astérisque rouge sont obligatoires (*)
+                    </div>
+
+                    <form id="applicationForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="homeAddress">ADRESSE DU DOMICILE *</label>
+                                <input type="text" id="homeAddress" name="homeAddress" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="residenceCountry">PAYS DE RESIDENCE *</label>
+                                <select id="residenceCountry" name="residenceCountry" required>
+                                    <option value="">SÉLECTIONNEZ UNE OPTION</option>
+                                    <option value="AF">Afghanistan</option>
+                                    <option value="ZA">Afrique du Sud</option>
+                                    <option value="AL">Albanie</option>
+                                    <option value="DZ">Algérie</option>
+                                    <option value="DE">Allemagne</option>
+                                    <option value="AD">Andorre</option>
+                                    <option value="AO">Angola</option>
+                                    <option value="AI">Anguilla</option>
+                                    <option value="AQ">Antarctique</option>
+                                    <option value="AG">Antigua-et-Barbuda</option>
+                                    <option value="SA">Arabie Saoudite</option>
+                                    <option value="AR">Argentine</option>
+                                    <option value="AM">Arménie</option>
+                                    <option value="AW">Aruba</option>
+                                    <option value="AU">Australie</option>
+                                    <option value="AT">Autriche</option>
+                                    <option value="AZ">Azerbaïdjan</option>
+                                    <option value="BS">Bahamas</option>
+                                    <option value="BH">Bahreïn</option>
+                                    <option value="BD">Bangladesh</option>
+                                    <option value="BB">Barbade</option>
+                                    <option value="BE">Belgique</option>
+                                    <option value="BZ">Belize</option>
+                                    <option value="BJ">Bénin</option>
+                                    <option value="BM">Bermudes</option>
+                                    <option value="BT">Bhoutan</option>
+                                    <option value="BY">Biélorussie</option>
+                                    <option value="BO">Bolivie</option>
+                                    <option value="BA">Bosnie-Herzégovine</option>
+                                    <option value="BW">Botswana</option>
+                                    <option value="BR">Brésil</option>
+                                    <option value="BN">Brunei</option>
+                                    <option value="BG">Bulgarie</option>
+                                    <option value="BF">Burkina Faso</option>
+                                    <option value="BI">Burundi</option>
+                                    <option value="KH">Cambodge</option>
+                                    <option value="CM">Cameroun</option>
+                                    <option value="CA">Canada</option>
+                                    <option value="CV">Cap-Vert</option>
+                                    <option value="CL">Chili</option>
+                                    <option value="CN">Chine</option>
+                                    <option value="CY">Chypre</option>
+                                    <option value="CO">Colombie</option>
+                                    <option value="KM">Comores</option>
+                                    <option value="CG">Congo</option>
+                                    <option value="CD">Congo (RDC)</option>
+                                    <option value="KR">Corée du Sud</option>
+                                    <option value="KP">Corée du Nord</option>
+                                    <option value="CR">Costa Rica</option>
+                                    <option value="CI">Côte d'Ivoire</option>
+                                    <option value="HR">Croatie</option>
+                                    <option value="CU">Cuba</option>
+                                    <option value="DK">Danemark</option>
+                                    <option value="DJ">Djibouti</option>
+                                    <option value="DO">République Dominicaine</option>
+                                    <option value="EG">Égypte</option>
+                                    <option value="AE">Émirats Arabes Unis</option>
+                                    <option value="EC">Équateur</option>
+                                    <option value="ER">Érythrée</option>
+                                    <option value="ES">Espagne</option>
+                                    <option value="EE">Estonie</option>
+                                    <option value="SZ">Eswatini</option>
+                                    <option value="US">États-Unis</option>
+                                    <option value="ET">Éthiopie</option>
+                                    <option value="FJ">Fidji</option>
+                                    <option value="FI">Finlande</option>
+                                    <option value="FR">France</option>
+                                    <option value="GA">Gabon</option>
+                                    <option value="GM">Gambie</option>
+                                    <option value="GE">Géorgie</option>
+                                    <option value="GH">Ghana</option>
+                                    <option value="GI">Gibraltar</option>
+                                    <option value="GR">Grèce</option>
+                                    <option value="GD">Grenade</option>
+                                    <option value="GT">Guatemala</option>
+                                    <option value="GN">Guinée</option>
+                                    <option value="GQ">Guinée équatoriale</option>
+                                    <option value="GW">Guinée-Bissau</option>
+                                    <option value="GY">Guyana</option>
+                                    <option value="GF">Guyane française</option>
+                                    <option value="HT">Haïti</option>
+                                    <option value="HN">Honduras</option>
+                                    <option value="HU">Hongrie</option>
+                                    <option value="IN">Inde</option>
+                                    <option value="ID">Indonésie</option>
+                                    <option value="IQ">Irak</option>
+                                    <option value="IR">Iran</option>
+                                    <option value="IE">Irlande</option>
+                                    <option value="IS">Islande</option>
+                                    <option value="IL">Israël</option>
+                                    <option value="IT">Italie</option>
+                                    <option value="JM">Jamaïque</option>
+                                    <option value="JP">Japon</option>
+                                    <option value="JO">Jordanie</option>
+                                    <option value="KZ">Kazakhstan</option>
+                                    <option value="KE">Kenya</option>
+                                    <option value="KG">Kirghizistan</option>
+                                    <option value="KI">Kiribati</option>
+                                    <option value="XK">Kosovo</option>
+                                    <option value="KW">Koweït</option>
+                                    <option value="LA">Laos</option>
+                                    <option value="LS">Lesotho</option>
+                                    <option value="LV">Lettonie</option>
+                                    <option value="LB">Liban</option>
+                                    <option value="LR">Libéria</option>
+                                    <option value="LY">Libye</option>
+                                    <option value="LI">Liechtenstein</option>
+                                    <option value="LT">Lituanie</option>
+                                    <option value="LU">Luxembourg</option>
+                                    <option value="MK">Macédoine du Nord</option>
+                                    <option value="MG">Madagascar</option>
+                                    <option value="MY">Malaisie</option>
+                                    <option value="MW">Malawi</option>
+                                    <option value="MV">Maldives</option>
+                                    <option value="ML">Mali</option>
+                                    <option value="MT">Malte</option>
+                                    <option value="MA">Maroc</option>
+                                    <option value="MU">Maurice</option>
+                                    <option value="MR">Mauritanie</option>
+                                    <option value="MX">Mexique</option>
+                                    <option value="MD">Moldavie</option>
+                                    <option value="MC">Monaco</option>
+                                    <option value="MN">Mongolie</option>
+                                    <option value="ME">Monténégro</option>
+                                    <option value="MZ">Mozambique</option>
+                                    <option value="MM">Myanmar</option>
+                                    <option value="NA">Namibie</option>
+                                    <option value="NP">Népal</option>
+                                    <option value="NI">Nicaragua</option>
+                                    <option value="NE">Niger</option>
+                                    <option value="NG">Nigeria</option>
+                                    <option value="NO">Norvège</option>
+                                    <option value="NZ">Nouvelle-Zélande</option>
+                                    <option value="OM">Oman</option>
+                                    <option value="UG">Ouganda</option>
+                                    <option value="UZ">Ouzbékistan</option>
+                                    <option value="PK">Pakistan</option>
+                                    <option value="PW">Palaos</option>
+                                    <option value="PA">Panama</option>
+                                    <option value="PG">Papouasie-Nouvelle-Guinée</option>
+                                    <option value="PY">Paraguay</option>
+                                    <option value="NL">Pays-Bas</option>
+                                    <option value="PE">Pérou</option>
+                                    <option value="PH">Philippines</option>
+                                    <option value="PL">Pologne</option>
+                                    <option value="PT">Portugal</option>
+                                    <option value="PR">Porto Rico</option>
+                                    <option value="QA">Qatar</option>
+                                    <option value="RO">Roumanie</option>
+                                    <option value="GB">Royaume-Uni</option>
+                                    <option value="RU">Russie</option>
+                                    <option value="RW">Rwanda</option>
+                                    <option value="SN">Sénégal</option>
+                                    <option value="RS">Serbie</option>
+                                    <option value="SC">Seychelles</option>
+                                    <option value="SL">Sierra Leone</option>
+                                    <option value="SG">Singapour</option>
+                                    <option value="SK">Slovaquie</option>
+                                    <option value="SI">Slovénie</option>
+                                    <option value="SO">Somalie</option>
+                                    <option value="SD">Soudan</option>
+                                    <option value="SS">Soudan du Sud</option>
+                                    <option value="LK">Sri Lanka</option>
+                                    <option value="SE">Suède</option>
+                                    <option value="CH">Suisse</option>
+                                    <option value="SR">Suriname</option>
+                                    <option value="SY">Syrie</option>
+                                    <option value="TJ">Tadjikistan</option>
+                                    <option value="TZ">Tanzanie</option>
+                                    <option value="TD">Tchad</option>
+                                    <option value="CZ">République tchèque</option>
+                                    <option value="TH">Thaïlande</option>
+                                    <option value="TL">Timor oriental</option>
+                                    <option value="TG">Togo</option>
+                                    <option value="TO">Tonga</option>
+                                    <option value="TN">Tunisie</option>
+                                    <option value="TM">Turkménistan</option>
+                                    <option value="TR">Turquie</option>
+                                    <option value="UA">Ukraine</option>
+                                    <option value="UY">Uruguay</option>
+                                    <option value="VU">Vanuatu</option>
+                                    <option value="VA">Vatican</option>
+                                    <option value="VE">Venezuela</option>
+                                    <option value="VN">Vietnam</option>
+                                    <option value="YE">Yémen</option>
+                                    <option value="ZM">Zambie</option>
+                                    <option value="ZW">Zimbabwe</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">VILLE *</label>
+                                <input type="text" id="city" name="city" required>
+                                <a href="#" class="select-link">CLIQUEZ ICI POUR SELECTIONNER</a>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="stateRegion">ETAT/REGION (ex: Kinshasa)</label>
+                                <input type="text" id="stateRegion" name="stateRegion">
+                            </div>
+                            <div class="form-group">
+                                <label for="postalCode">CODE POSTAL</label>
+                                <input type="text" id="postalCode" name="postalCode">
+                            </div>
+                            <div class="form-group">
+                                <label>Avez-vous fait une escale dans un autre pays?</label>
+                                <div class="stopover-toggle">
+                                    <button type="button" class="toggle-btn active">NON</button>
+                                    <button type="button" class="toggle-btn">OUI</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="travel-type-section">
+                            <div class="travel-option">
+                                <input type="radio" id="entry" name="travelType" value="entry">
+                                <label for="entry" class="travel-label">
+                                    <div class="map-icon entry">
+                                        <i class="fas fa-plane"></i>
+                                    </div>
+                                    <span>Entrée de la république démocratique du congo</span>
+                                </label>
+                            </div>
+                            <div class="travel-option">
+                                <input type="radio" id="departure" name="travelType" value="departure">
+                                <label for="departure" class="travel-label">
+                                    <div class="map-icon departure">
+                                        <i class="fas fa-plane"></i>
+                                    </div>
+                                    <span>Départ de la république démocratique du congo</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary" onclick="handleSuivantClick(event)">SUIVANT</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- E-TICKET Application Form Step 2 Modal -->
+    <div id="eticketApplicationFormStep2" class="modal application-form-modal">
+        <div class="application-form-content">
+            <!-- Close Button -->
+            <span class="close" onclick="closeApplicationFormStep2()">&times;</span>
+            
+            <!-- Back Arrow Button -->
+            <span class="back-arrow" onclick="goBackToStep1()">
+                <i class="fas fa-chevron-left"></i>
+            </span>
+
+            <!-- Navigation Header -->
+            <div class="application-nav-header">
+                <div class="nav-logo">
+                    <img src="images/new-logo.png" alt="RDC Congo Logo" class="nav-logo-img">
+                    <div class="nav-logo-text">
+                        <h1>E-TICKET</h1>
+                        <p>RDC CONGO</p>
+                    </div>
+                </div>
+                <div class="nav-language">
+                    <select id="appLanguageSelectStep2" onchange="changeAppLanguageStep2(this.value)">
+                        <option value="fr">FRANÇAIS</option>
+                        <option value="en">ENGLISH</option>
+                        <option value="es">ESPAÑOL</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            
+            <!-- Top Section -->
+            <div class="application-top">
+            </div>
+
+            <!-- Main Form Content -->
+            <div class="application-form-body">
+                <div class="form-section">
+                    <h2>DONNEES MIGRATOIRES <i class="fas fa-question-circle"></i></h2>
+                    <div class="mandatory-notice">
+                        Les champs marqués d'un astérisque rouge sont obligatoires (*)
+                    </div>
+
+                    <form id="applicationFormStep2">
+                        <h3>INFORMATIONS PERSONNELLES</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">Prénom *</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Nom *</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="gender">Genre *</label>
+                                <select id="gender" name="gender" required>
+                                    <option value="">Sélectionner</option>
+                                    <option value="M">Masculin</option>
+                                    <option value="F">Féminin</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Téléphone *</label>
+                                <input type="tel" id="phone" name="phone" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">E-mail *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="confirmEmail">Confirmer E-mail *</label>
+                                <input type="email" id="confirmEmail" name="confirmEmail" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="birthDate">Date de naissance *</label>
+                                <input type="date" id="birthDate" name="birthDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="birthCountry">Pays de naissance *</label>
+                                <select id="birthCountry" name="birthCountry" required>
+                                    <option value="">Sélectionner</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="address">Adresse *</label>
+                                <input type="text" id="address" name="address" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="zip">Code postal *</label>
+                                <input type="text" id="zip" name="zip" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="city">Ville *</label>
+                                <input type="text" id="city" name="city" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="homeCountry">Pays de résidence *</label>
+                                <select id="homeCountry" name="homeCountry" required>
+                                    <option value="">Sélectionner</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="passportNumber">Numéro de passeport *</label>
+                                <input type="text" id="passportNumber" name="passportNumber" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="passportCountry">Pays d'émission du passeport *</label>
+                                <select id="passportCountry" name="passportCountry" required>
+                                    <option value="">Sélectionner</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="civilStatus">État civil *</label>
+                                <select id="civilStatus" name="civilStatus" required>
+                                    <option value="">Sélectionner</option>
+                                    <option value="single">Célibataire</option>
+                                    <option value="married">Marié(e)</option>
+                                    <option value="divorced">Divorcé(e)</option>
+                                    <option value="widowed">Veuf/Veuve</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="occupation">Profession *</label>
+                                <input type="text" id="occupation" name="occupation" required>
+                            </div>
+                        </div>
+                        <h3>CHOIX DU TYPE DE BILLET</h3>
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label for="ticketType">Type de billet *</label>
+                                <select id="ticketType" name="ticketType" required>
+                                    <option value="">Sélectionner</option>
+                                    <option value="arrival">Arrivée</option>
+                                    <option value="departure">Départ</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h3>ARRIVÉE EN RDC CONGO</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="accommodation">Type d'hébergement *</label>
+                                <input type="text" id="accommodation" name="accommodation" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="stayDays">Nombre de jours de séjour *</label>
+                                <input type="number" id="stayDays" name="stayDays" min="1" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="travelPurpose">Motif du voyage *</label>
+                                <select id="travelPurpose" name="travelPurpose" required>
+                                    <option value="">Sélectionner</option>
+                                    <option value="tourism">Tourisme</option>
+                                    <option value="business">Affaires</option>
+                                    <option value="family">Famille</option>
+                                    <option value="medical">Médical</option>
+                                    <option value="education">Éducation</option>
+                                    <option value="transit">Transit</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="departureAirport">Aéroport de départ *</label>
+                                <input type="text" id="departureAirport" name="departureAirport" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="arrivalDate">Date d'arrivée *</label>
+                                <input type="date" id="arrivalDate" name="arrivalDate" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="arrivalAirport">Aéroport d'arrivée *</label>
+                                <input type="text" id="arrivalAirport" name="arrivalAirport" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="airline">Compagnie aérienne *</label>
+                                <input type="text" id="airline" name="airline" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="flightNumber">Numéro de vol *</label>
+                                <input type="text" id="flightNumber" name="flightNumber" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label for="sports">Prévoyez-vous de pratiquer un sport pendant votre séjour ?</label>
+                                <select id="sports" name="sports">
+                                    <option value="">Sélectionner</option>
+                                    <option value="none">Aucun</option>
+                                    <option value="football">Football</option>
+                                    <option value="basketball">Basketball</option>
+                                    <option value="tennis">Tennis</option>
+                                    <option value="swimming">Natation</option>
+                                    <option value="running">Course à pied</option>
+                                    <option value="golf">Golf</option>
+                                    <option value="other">Autre</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label>Ferez-vous des escales dans d'autres pays ? *</label>
+                                <div>
+                                    <label><input type="radio" name="stopovers" value="yes" required> Oui</label>
+                                    <label><input type="radio" name="stopovers" value="no" required> Non</label>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>INFORMATIONS SUPPLÉMENTAIRES</h3>
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label for="travelAlone">Voyagez-vous seul(e) ? *</label>
+                                <select id="travelAlone" name="travelAlone" required>
+                                    <option value="">Sélectionner</option>
+                                    <option value="yes">Oui</option>
+                                    <option value="no">Non</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h3>INFORMATIONS DE DOUANE</h3>
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label>Remplissez-vous le formulaire de douane pour un tiers ? *</label>
+                                <div>
+                                    <label><input type="radio" name="customsThirdParty" value="yes" required> Oui</label>
+                                    <label><input type="radio" name="customsThirdParty" value="no" required> Non</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label>Transportez-vous des devises ou instruments de paiement dépassant 10 000 USD ? *</label>
+                                <div>
+                                    <label><input type="radio" name="currency" value="yes" required> Oui</label>
+                                    <label><input type="radio" name="currency" value="no" required> Non</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label>Êtes-vous propriétaire des biens que vous transportez ? *</label>
+                                <div>
+                                    <label><input type="radio" name="owner" value="yes" required> Oui</label>
+                                    <label><input type="radio" name="owner" value="no" required> Non</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label>Transportez-vous des animaux vivants, plantes ou produits alimentaires ? *</label>
+                                <div>
+                                    <label><input type="radio" name="animals" value="yes" required> Oui</label>
+                                    <label><input type="radio" name="animals" value="no" required> Non</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label>Transportez-vous des biens soumis à la taxe ? *</label>
+                                <div>
+                                    <label><input type="radio" name="taxGoods" value="yes" required> Oui</label>
+                                    <label><input type="radio" name="taxGoods" value="no" required> Non</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label><input type="checkbox" name="terms" required> J'ai lu et j'accepte les <a href="#" target="_blank">conditions générales</a>.</label>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label><input type="checkbox" name="truth" required> Je déclare que les données fournies sont exactes et je m'engage à respecter les sanctions prévues par la loi en cas de fausse déclaration.</label>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">SUIVANT</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- E-TICKET Application Form Step 3 Modal -->
+    <div id="eticketApplicationFormStep3" class="modal application-form-modal">
+        <div class="application-form-content">
+            <!-- Close Button -->
+            <span class="close" onclick="closeApplicationFormStep3()">&times;</span>
+            
+            <!-- Back Arrow Button -->
+            <span class="back-arrow" onclick="goBackToStep2()">
+                <i class="fas fa-chevron-left"></i>
+            </span>
+
+            <!-- Navigation Header -->
+            <div class="application-nav-header">
+                <div class="nav-logo">
+                    <img src="images/new-logo.png" alt="RDC Congo Logo" class="nav-logo-img">
+                    <div class="nav-logo-text">
+                        <h1>E-TICKET</h1>
+                        <p>RDC CONGO</p>
+                    </div>
+                </div>
+                <div class="nav-language">
+                    <select id="appLanguageSelectStep3" onchange="changeAppLanguageStep3(this.value)">
+                        <option value="fr">FRANÇAIS</option>
+                        <option value="en">ENGLISH</option>
+                        <option value="es">ESPAÑOL</option>
+                    </select>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+            </div>
+            <!-- Progress Bar -->
+            <div class="progress-bar">
+                <div class="progress-step">
+                    <div class="step-number">1</div>
+                    <div class="step-text">INFORMATION GENERALE</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step">
+                    <div class="step-number">2</div>
+                    <div class="step-text">DONNEES MIGRATOIRES</div>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step active">
+                    <div class="step-number">3</div>
+                    <div class="step-text">INFORMATION DE DOUANNE</div>
+                </div>
+            </div>
+            <!-- Main Form Content -->
+            <div class="application-form-body">
+                <div class="form-section">
+                    <h2>INFORMATION DE DOUANNE <i class="fas fa-question-circle"></i></h2>
+                    <div class="mandatory-notice">
+                        Les champs marqués d'un astérisque rouge sont obligatoires (*)
+                    </div>
+                    <form id="applicationFormStep3">
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label>Transportez-vous des marchandises ou objets soumis à déclaration ? *</label>
+                                <div>
+                                    <label><input type="radio" name="declaredGoods" value="yes" required> Oui</label>
+                                    <label><input type="radio" name="declaredGoods" value="no" required> Non</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label>Transportez-vous des devises ou instruments de paiement dépassant 10 000 USD ? *</label>
+                                <div>
+                                    <label><input type="radio" name="currency" value="yes" required> Oui</label>
+                                    <label><input type="radio" name="currency" value="no" required> Non</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label>Transportez-vous des animaux vivants, plantes ou produits alimentaires ? *</label>
+                                <div>
+                                    <label><input type="radio" name="animals" value="yes" required> Oui</label>
+                                    <label><input type="radio" name="animals" value="no" required> Non</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label>Transportez-vous des biens soumis à la taxe ? *</label>
+                                <div>
+                                    <label><input type="radio" name="taxGoods" value="yes" required> Oui</label>
+                                    <label><input type="radio" name="taxGoods" value="no" required> Non</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group" style="width:100%">
+                                <label><input type="checkbox" name="customsTerms" required> J'ai lu et j'accepte les conditions de déclaration en douane.</label>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="submit" class="btn btn-primary">TERMINER</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content success">
+            <span class="close">&times;</span>
+            <div class="success-content">
+                <i class="fas fa-check-circle"></i>
+                <h2>E-TICKET Généré avec Succès!</h2>
+                <div class="qr-code">
+                    <div class="qr-placeholder">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <p>Code QR: <span id="ticketNumber">ET-2025-001234</span></p>
+                </div>
+                <div class="ticket-actions">
+                    <button class="btn btn-primary" onclick="downloadPDF()">
+                        <i class="fas fa-download"></i>
+                        Télécharger PDF
+                    </button>
+                    <button class="btn btn-secondary" onclick="closeSuccessModal()">
+                        Fermer
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exigences Modal -->
+    <div id="exigencesModal" class="modal">
+        <div class="modal-content exigences">
+            <span class="close" onclick="closeExigencesModal()">&times;</span>
+            <div class="exigences-content">
+                <div class="exigences-modal-header" style="display: flex; justify-content: space-between; align-items: center;">
+                    <h2 style="margin: 0;"><i class="fas fa-info-circle"></i> EXIGENCES E-TICKET</h2>
+                    <div class="exigences-language-selector">
+                        <select id="exigencesLanguageSelect" onchange="changeExigencesLanguage(this.value)">
+                            <option value="fr">FRANÇAIS</option>
+                            <option value="en">ENGLISH</option>
+                            <option value="es">ESPAÑOL</option>
+                        </select>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                </div>
+                <div class="exigences-text">
+                    <p>Le gouvernement de la RDC CONGO et SERVICE D'IMMIGRATION délivre un document en ligne appelé e-Ticket, conçu pour suivre les touristes qui entrent et sortent du pays. Toute personne souhaitant visiter la RDC CONGO doit remplir deux formulaires de demande. Ces formulaires sont les suivants :</p>
+                    
+                    <ul>
+                        <li><strong>Pass d'arrivée</strong> (utilisé à l'entrée du pays)</li>
+                        <li><strong>Pass de départ</strong> (utilisé à la sortie du pays)</li>
+                    </ul>
+                    
+                    <p>Le pass délivré par le gouvernement de la RDC CONGO est une exigence légale, et toute personne ne s'en procurant pas risque de ne pas être autorisée à entrer ou à sortir du pays. Si un visiteur connaît les dates de son arrivée et de son départ de la RDC CONGO, il peut utiliser une seule demande pour les deux passes.</p>
+                    
+                    <div class="important-notice">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Veuillez noter :</h3>
+                        <p>Le billet électronique (e-Ticket) ne remplace pas un visa. Si vous êtes citoyen d'un pays qui nécessite un visa pour entrer en RDC CONGO, vous devez obtenir à la fois un e-Ticket et un visa. Ces documents devront être présentés au service d'immigration et de sécurité à l'entrée et à la sortie du pays.</p>
+                    </div>
+                </div>
+                
+                <div class="exigences-actions">
+                    <button class="btn btn-primary" onclick="closeExigencesModal()">
+                        <i class="fas fa-check"></i>
+                        Compris
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Exigences Info Modal (from orange button) -->
+    <div id="exigencesInfoModal" class="modal">
+        <div class="modal-content exigences">
+            <span class="close" onclick="closeExigencesInfoModal()">&times;</span>
+            <div class="exigences-content">
+                <h2><i class="fas fa-info-circle"></i> EXIGENCES E-TICKET</h2>
+                <div class="exigences-text">
+                    <p>Le gouvernement de la RDC CONGO et SERVICE D’IMMIGRATION délivre un document en ligne appelé e-Ticket, conçu pour suivre les touristes qui entrent et sortent du pays. Toute personne souhaitant visiter la RDC CONGO doit remplir deux formulaires de demande. Ces formulaires sont les suivants :</p>
+                    <ul>
+                        <li><strong>Pass d’arrivée</strong> (utilisé à l’entrée du pays)</li>
+                        <li><strong>Pass de départ</strong> (utilisé à la sortie du pays)</li>
+                    </ul>
+                    <p>Le pass délivré par le gouvernement de la RDC CONGO est une exigence légale, et toute personne ne s’en procurant pas risque de ne pas être autorisée à entrer ou à sortir du pays. Si un visiteur connaît les dates de son arrivée et de son départ de la RDC CONGO, il peut utiliser une seule demande pour les deux passes.</p>
+                    <div class="important-notice">
+                        <h3><i class="fas fa-exclamation-triangle"></i> Veuillez noter :</h3>
+                        <p>Le billet électronique (e-Ticket) ne remplace pas un visa. Si vous êtes citoyen d’un pays qui nécessite un visa pour entrer en RDC CONGO, vous devez obtenir à la fois un e-Ticket et un visa. Ces documents devront être présentés au service d’immigration et de sécurité à l’entrée et à la sortie du pays.</p>
+                    </div>
+                </div>
+                <div class="exigences-actions">
+                    <button class="btn btn-primary" onclick="closeExigencesInfoModal()">
+                        <i class="fas fa-check"></i>
+                        Compris
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
